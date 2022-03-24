@@ -47,3 +47,30 @@ while True:
                 print("Saldo anda sekarang: Rp. " + str(atm.cekBalance()) + "")
             else:
                 break
+        elif selectmenu == 4:
+            verify_pin = int(input("Masukkan pin anda: "))
+            trial = 0
+            while verify_pin != int(atm.cekPin()) and trial < 3:
+                verify_pin = int(input("Pin anda salah, silakan masukkan pin: "))
+                trial += 1
+                if trial == 3:
+                    print("Error. Silakan ambil kartu dan coba lagi..")
+                    exit()
+            updated_pin = int(input("Silahkan masukkan pin baru: "))
+            print("Pin anda berhasil diganti!")
+            verify_newpin = int(input("Coba masukkan pin baru: "))
+            if verify_newpin == updated_pin:
+                print("Pin baru anda sukses!")
+                atm.custPin = updated_pin
+            else:
+                print("Maaf, pin anda salah! ")
+        elif selectmenu == 5:
+            print("Resi tercetak otomatis saat anda keluar.\nHarap simpan tanda terima ini\nsebagai bukti transaksi "
+                  "anda.")
+            print("No. Record: ", random.randint(100000, 1000000))
+            print("Tanggal: ", datetime.datetime.now())
+            print("Saldo akhir: ", atm.cekBalance())
+            print("Terima kasih telah menggunakan ATM Kelompok 32!")
+            exit()
+        else:
+            print("Error. Maaf, menu tidak tersedia")
