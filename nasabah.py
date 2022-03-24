@@ -9,10 +9,12 @@ class nasabah:
     
     def cekPin (self):
         return self.custPin
+
     def cekBalance (self):
+        return self.custBalance
 
     def withdrawBalance (self, nomimal):
-        self.custBalance -= nominal)
+        self.custBalance -= nominal
 
     def depositBalance (self, nominal):
         self.custBalance += nominal
