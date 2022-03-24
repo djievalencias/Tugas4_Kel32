@@ -7,14 +7,14 @@ class nasabah:
     def cekId(self):
         return self.id
     
-    def cekPin (self):
+    def cekPin(self):
         return self.custPin
 
-    def cekBalance (self):
+    def cekBalance(self):
         return self.custBalance
 
-    def withdrawBalance (self, nomimal):
+    def withdrawBalance(self, nominal):
         self.custBalance -= nominal
 
-    def depositBalance (self, nominal):
+    def depositBalance(self, nominal):
         self.custBalance += nominal
